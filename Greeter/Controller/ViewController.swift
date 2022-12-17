@@ -52,7 +52,11 @@ final class ViewController: UIViewController {
     //MARK: flow funcs
     
     private func showAlert() {
-        let alert = UIAlertController(title: "Hi!", message: "Enter character h e l l o in different order", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Hi!", message: """
+Enter characters
+h e l l o
+in different order
+""", preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default) { [weak self] action in
             guard let text = alert.textFields?.first?.text else { return }
             self?.greetModel.greet = text.lowercased()
